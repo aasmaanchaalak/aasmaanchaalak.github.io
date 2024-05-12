@@ -98,7 +98,7 @@
 			    const printData = data.message;
 			    console.log(printData);
                         const resultElement = document.getElementById('coordinates');
-                        resultElement.innerHTML = "Nearest Debris ID: " + JSON.stringify(printData["id"]).replace("",'') + "<br>Launch Date: " + JSON.stringify(printData["launch_date"]).replace("",'') + "<br>Country: " + JSON.stringify(printData["country"]).replace("",'');
+                        resultElement.innerHTML = "Nearest Debris ID: " + JSON.stringify(printData["id"]).replace(/^"(.*)"$/,'') + "<br>Launch Date: " + JSON.stringify(printData["launch_date"]).replace(/^"(.*)"$/,'') + "<br>Country: " + JSON.stringify(printData["country"]).replace(/^"(.*)"$/,'');
 			    document.getElementById('verify').innerHTML = "You can see the debris on map at: <a target='_blank' style = 'color:white' href='https://www.n2yo.com/?s=" + printData["id"] + "'>N2YO</a>";
 			    console.log(JSON.stringify(printData));
                     })
@@ -130,7 +130,7 @@
 
   <p id="coordinates"></p>
 <p id="verify"></p>
-        <p style="position: absolute; bottom: 0; left: 43%;">Thanks! By Aditya Agarwal.</p>
+        <p style="position: absolute; bottom: 0; left: 44%;">Thanks! By Aditya Agarwal.</p>
     </section>
 	
 </main>
