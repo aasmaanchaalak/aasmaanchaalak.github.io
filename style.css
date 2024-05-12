@@ -1,0 +1,253 @@
+main > section:nth-child(1) {
+    background-color: black;
+  }
+  
+  main > section:nth-child(2) {
+    background-color: black;
+  }
+  
+  main > section:nth-child(3) {
+    background-color: white;
+  }
+  
+  main > section:nth-child(4) {
+    background-color: black;
+  }
+  
+    
+
+  main > section:nth-child(6) {
+    background-color: white;
+  }
+
+  main > section:nth-child(7) {
+    background-color: white;
+  }
+
+  main > section:nth-child(8) {
+    background-color: black;
+  }
+  main > section:nth-child(9) {
+    background-color: black;
+  }
+  
+  main > section {
+    padding: 30px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 90px;
+    font-weight: bold;
+  }
+  
+  /* -----------------------------------------------------
+   for fsvs
+  ----------------------------------------------------- */
+  html.fsvs {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  
+  html.fsvs #fsvs-body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+  }
+  
+  html.fsvs #fsvs-body > * {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+  }
+  
+  /* -----------------------------------------------------
+   pagenation
+  ----------------------------------------------------- */
+  html.fsvs #fsvs-pagination {
+    width: 32px;
+    height: auto;
+    padding: 8px 4px;
+    margin: 0;
+    position: fixed;
+    left:50px;
+    top: 50%;
+    z-index: 999;
+  }
+  
+  html.fsvs #fsvs-pagination li {
+    width: 25px;
+    height: 25px;
+    margin: 0 0 2px 0;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  html.fsvs #fsvs-pagination li > span {
+    width: 22px;
+    height: 22px;
+    display: block;
+    line-height: 22px;
+    border-radius: 100%;
+    border: 1px solid white;
+  }
+  
+  html.fsvs #fsvs-pagination li > span > span {
+    width: 12px;
+    height: 12px;
+    margin: 4px;
+    display: block;
+    line-height: 12px;
+    border-radius: 100%;
+    border: 1px solid white;
+  }
+  
+  html.fsvs #fsvs-pagination li.active > span {
+    border: 1px dashed white;
+  }
+  
+  html.fsvs #fsvs-pagination li.active > span > span {
+    background: white;
+  }
+  
+  html.fsvs #fsvs-pagination li:last-child {
+    margin: 0;
+  }
+  
+  /* -----
+  SVG Icons - svgicons.sparkk.fr
+  ----- */
+
+  
+  ul {
+    list-style: none;
+  }
+  
+  .main {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .page h1 {
+    font-size: 43px;
+    padding: 0;
+    margin: 0;
+  }
+  .page p {
+    font-size: 14px;
+  }
+
+  #typewriter2 {
+    opacity: 0.0;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+  }
+
+  #typewriter3 {
+    opacity: 0.0;
+    animation-name: example2;
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+  }
+
+  #typewriter4 {
+    opacity: 0.0;
+    animation-name: example3;
+    animation-duration: 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes example {
+    from {opacity: 0.0;}
+    to {opacity: 0.9;}
+  }
+
+  @keyframes example2 {
+    from {opacity: 0.0;}
+    to {opacity: 0.5;}
+  }
+
+  @keyframes example3 {
+    from {opacity: 0.0;}
+    to {opacity: 0.3;}
+  }
+
+  .page h2 {
+    font-size: 64px;
+  }
+
+  a {
+    color: black;
+  }
+  
+  .set {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+  }
+
+  .year {
+    display: inline-block; /* Ensure each year is on its own line */
+  }
+  
+  .space {
+    margin-right: 21px; /* Adjust the margin to add space between years */
+  }
+
+  .image-container {
+    display: flex; /* Use flexbox layout */
+  }
+  
+  .image-container img {
+    margin: 50px; /* Adjust margin between images */
+  }
+
+  iframe{
+    border: 0;
+    width: 100%;
+    height: 70%;
+  }
+
+  .def{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
+
+  }
+
+  .def h3{
+    font-size: 40px;
+  }
+
+  .def p{
+    font-size: 29px;
+    font-weight: lighter;
+  }
+
+  button{
+    border-radius: 12px;
+  }
