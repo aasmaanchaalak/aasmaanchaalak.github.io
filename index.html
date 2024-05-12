@@ -1,109 +1,136 @@
 <!DOCTYPE html>
-<html>
-<style>
-	body {
-		background-image: url('K6b7VvXYjcFZAHdBjEfh4i.jpg');
-		background-position: center;
-		color: white;
-		font-family: Tahoma, sans-serif;
-	}
+<html lang="en" class="fsvs">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Full Screen Vertical Slider</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed:100'>
 
-div {
-	padding: 3%;
-}
-
-h1 {
-	padding: 2%;
-	color: white;
-}
-	
-	ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: right;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: cyan;
-  color: grey;
-}
-
-iframe{
-	border: 0;
-	width: 70%;
-	height: 12.4%;
-}
-	#1, #2, #3, #4 {
-		visibility: hidden;
-	}
-
-	#home:hover #1{
-		visibility: visible;
-	}
-
-</style>
+</head>
 <body>
-<h1>Cosmograph</h1>
-<ul>
-  <li><a href="#home">What is Space Debris?</a></li>
-  <li><a href="#why">Why track it?</a></li>
-  <li><a href="#how">How Cosmograph works?</a></li>
-    <li><a href="#news">Debris that often flows over Ashoka</a></li>
-    <li><a href="#news">Some readings</a></li>
-  <li><a href="#tle">Understanding TLE</a></li>
-  <li><a href="#photo">Cyanotype Technique</a></li>
-  <li><a href="#api">Track Debris</a></li>
-</ul>
+<!-- partial:index.partial.html -->
 
-<div id="home">
-	What is Space Debris?
-	<img src="1.jpg" id="1"></img>
-	<img src="2.jpg" id="2"></img>
-	<img src="3.jpg" id="3"></img>
-	<img src="4.jpg" id="4"></img>
-</div>
-<div id="why">
-	Why its important?<br>
-<br>
-	so we need waste management in space too><br>
-<br>
-	we cant jsut throw trash in space - futurama gif?<br>
-</div>
-<div id="how">
-	How Cosmograph works?
+<main id="fsvs-body">
+	<section class="page">   
+        <div class="image-container">
+            <img src="images/1.jpg"></img>
+            <img src="images/2.jpg"></img>
+            <img src="images/3.jpg"></img>
+            <img src="images/4.jpg"></img>
+        </div>
+        <p style="position: absolute; bottom: 0; left: 50%;">Scroll</p>
+	</section>
 
-	seismograph<br>
-	<br>
-	<iframe src="https://www.youtube.com/embed/Hp81Lr9cbSQ"></iframe>
-</div>
-<div id="tle">
-	Understanding TLE and the API
-</div>
-<div id="photo">
-	Photosensitivity & Cyanotype Technique
-</div>
-<div id="">
-	Common Debris over Ashoka
-</div>
-<div id="api">
-	Play around with the API<br>
-<br>
-	(choose & get loc || check for coord)
-</div>
+	<section class="page">
+		<div class="set" id="type">
+			<h2 id="typewriter"></h2>
+		</div>
+        <p id="typewriter2" style="font-size: 20px">Colliding with launches</p>
+        <p id="typewriter3" style="font-size: 20px;">Crashing satellites</p>
+        <p id="typewriter4" style="font-size: 20px;">Interruptions in Communications</p>
+	</section>
+	
+	
+	<section class="page">
+	    <div class="set special">
+			<img src="images/separation.gif" style="width:90%;height:80vh"></img>
+		</div>
+	</section>
+	
+	
+	<section class="page">
+        <h2>Anti-Satellite Missile Tests - large contributors</h2>
+        <img src="images/russia-anti.jpg"></img>
+        <p><img src="images/china-flag.png" style="vertical-align: middle;height:4vh"></img> Fengyun - 3,549  <span class="space"></span><img src="images/russia-flag.png" style="vertical-align: middle;height:4vh"></img> Kosmos2 - 1,716; Kosmos1 - 1,562</p>
+    </section>
+
+    <section class="page" style="padding:0">
+        <img src="images/detection.png" style="top:0; left:0;width:100%; height: 100vh;"></img>
+    </section>
+
+    <section class="page" style="color: black;">
+        Difficult to detect and track millions.<br>
+
+        US Air Force tracks over 10K.<br>
+
+        <p style="position: absolute; bottom:100px; left: 40%;">Accessible through the <a href="https://space-track.org/">Space-Track API</a></p>
+    </section>
+
+    <section class="page">
+        <div class="def">
+            Cosmograph<br>
+            <h3>/ˈkɒzməɡrɑːf/ <i>(noun)</i></h3>
+            <p>A device that prints the ID of a space debris object passing above it.</p>
+            <p>The design is inspired by a seismograph used for earthquakes.</p>
+            <p>The printer uses a laser for a precise reading and to depict the detection method <br>used to track these objects.</p>
+        </div>
+    </section>
+
+    <section class="page" style="padding:0">
+        <iframe src="https://www.youtube.com/embed/Hp81Lr9cbSQ"></iframe>
+    </section>
+	
+	<section class="page">
+        Debris near you
+        <button onclick="getLocation()">Get Location</button>
+        <!--<iframe src="https://www.n2yo.com/?s=41283"></iframe>-->
+
+        <script>
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+              } else {
+                document.getElementById("coordinates").textContent = "Geolocation is not supported by this browser.";
+              }
+            }
+        
+            function showPosition(position) {
+              var latitude = position.coords.latitude;
+              var longitude = position.coords.longitude;
+              document.getElementById("coordinates").textContent = "Latitude: " + latitude + ", Longitude: " + longitude;
+              if (latitude != undefined) {
+                fetch('https://adityaagarwalug24.pythonanywhere.com/?lat='+latitude+'&long='+longitude)
+                    .then(response => response.json())
+                    .then(data => {
+                        const printData = data.message;
+                        const resultElement = document.getElementById('coordinates');
+                        resultElement.innerHTML = JSON.stringify(printData);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                }  
+            }
+        
+            function showError(error) {
+              switch(error.code) {
+                case error.PERMISSION_DENIED:
+                  document.getElementById("coordinates").textContent = "User denied the request for Geolocation.";
+                  break;
+                case error.POSITION_UNAVAILABLE:
+                  document.getElementById("coordinates").textContent = "Location information is unavailable.";
+                  break;
+                case error.TIMEOUT:
+                  document.getElementById("coordinates").textContent = "The request to get user location timed out.";
+                  break;
+                case error.UNKNOWN_ERROR:
+                  document.getElementById("coordinates").textContent = "An unknown error occurred.";
+                  break;
+              }
+        }
+
+
+          </script>
+
+  <p id="coordinates"></p>
+        <p style="position: absolute; bottom: 0; left: 50%;">Thanks</p>
+    </section>
+	
+</main>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='http://www.greenmarble.jp/script/scrollbypage/fsvs.js'></script><script  src="myscript.js"></script>
+</script><script  src="debrisFunction.js"></script>
 </body>
 </html>
-
