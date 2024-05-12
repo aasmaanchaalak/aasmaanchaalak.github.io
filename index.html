@@ -91,11 +91,7 @@
               document.getElementById("coordinates").textContent = "Latitude: " + latitude + ", Longitude: " + longitude;
               if (latitude != undefined) {
                 fetch('https://adityaagarwalug24.pythonanywhere.com/?lat='+Math.round(latitude)+'&long='+Math.round(longitude), {
-				  mode:  'cors' 
-				  method: 'POST',
-				  headers: {
-				    'Content-Type': 'application/json'
-				  }})
+				  mode:  'cors'})
                     .then(response => response.json())
                     .then(data => {
 			    console.log(data);
