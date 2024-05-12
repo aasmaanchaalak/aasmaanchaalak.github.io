@@ -98,7 +98,7 @@
 			    const printData = data.message;
 			    console.log(printData);
                         const resultElement = document.getElementById('coordinates');
-                        resultElement.innerHTML = "Nearest Debris has NORAD ID - " + JSON.stringify(printData);
+                        resultElement.innerHTML = "Nearest Debris has COSPAR ID - " + JSON.stringify(printData);
 			    document.getElementById('verify').innerHTML = "You can see the debris on map at: <a href='https://www.n2yo.com/?s=" + printData + "'>N2YO</a>";
 			    console.log(JSON.stringify(printData));
                     })
