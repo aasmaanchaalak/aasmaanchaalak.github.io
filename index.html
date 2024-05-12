@@ -2,7 +2,7 @@
 <html lang="en" class="fsvs">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Full Screen Vertical Slider</title>
+  <title>Comograph</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed:100'>
@@ -90,7 +90,12 @@
               var longitude = position.coords.longitude;
               document.getElementById("coordinates").textContent = "Latitude: " + latitude + ", Longitude: " + longitude;
               if (latitude != undefined) {
-                fetch('https://adityaagarwalug24.pythonanywhere.com/?lat='+Math.round(latitude)+'&long='+Math.round(longitude), {mode:  'cors'})
+                fetch('https://adityaagarwalug24.pythonanywhere.com/?lat='+Math.round(latitude)+'&long='+Math.round(longitude), {
+				  mode:  'cors' 
+				  method: 'POST',
+				  headers: {
+				    'Content-Type': 'application/json'
+				  }})
                     .then(response => response.json())
                     .then(data => {
 			    console.log(data);
@@ -127,7 +132,7 @@
           </script>
 
   <p id="coordinates"></p>
-        <p style="position: absolute; bottom: 0; left: 50%;">Thanks</p>
+        <p style="position: absolute; bottom: 0; left: 50%;">Thanks! By Aditya Agarwal.</p>
     </section>
 	
 </main>
