@@ -90,7 +90,7 @@
               var longitude = position.coords.longitude;
               document.getElementById("coordinates").textContent = "Latitude: " + latitude + ", Longitude: " + longitude;
               if (latitude != undefined) {
-                fetch('https://adityaagarwalug24.pythonanywhere.com/?lat='+Math.round(latitude)+'&long='+Math.round(longitude))
+                fetch('https://adityaagarwalug24.pythonanywhere.com/?lat='+Math.round(latitude)+'&long='+Math.round(longitude), {mode:  'no-cors'})
                     .then(response => response.json())
                     .then(data => {
                         const printData = data.message;
