@@ -88,7 +88,7 @@
             function showPosition(position) {
               var latitude = position.coords.latitude;
               var longitude = position.coords.longitude;
-              document.getElementById("coordinates").textContent = "Latitude: " + latitude + ", Longitude: " + longitude + " ---> Locating Debris...;
+              document.getElementById("coordinates").textContent = "Latitude: " + latitude + ", Longitude: " + longitude + " ---> Locating Debris...";
               if (latitude != undefined) {
                 fetch('https://adityaagarwalug24.pythonanywhere.com/?lat='+Math.round(latitude)+'&long='+Math.round(longitude), {
 				  mode:  'cors',  headers:{'content-type': 'application/json'}})
