@@ -250,4 +250,5 @@ main > section:nth-child(1) {
 
   button{
     border-radius: 12px;
+    cursor: pointer;
   }
